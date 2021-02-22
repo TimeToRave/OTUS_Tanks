@@ -16,6 +16,7 @@ namespace Tanks.Classes.Commands
 		public bool Execute()
 		{
 			RotableEntity.Velocity.Swap();
+			RotableEntity.Velocity.Y *= -1;
 			return true;
 		}
 	}

@@ -13,8 +13,8 @@ namespace Tanks.Classes.Commands
 
 		public bool Execute ()
 		{
-			RotableEntity.Velocity.X *= -1;
 			RotableEntity.Velocity.Swap();
+			RotableEntity.Velocity.X *= -1;
 			return true;
 		}
 	}
