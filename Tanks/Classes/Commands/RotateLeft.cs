@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Tanks.Interfaces;
+﻿using Tanks.Interfaces;
 
 namespace Tanks.Classes.Commands
 {

@@ -9,7 +9,7 @@ namespace Tanks.Classes
 	/// <summary>
 	///  Координата
 	/// </summary>
-	class Point
+	public class Point
 	{
 		public Point() : this(0, 0) {}
 

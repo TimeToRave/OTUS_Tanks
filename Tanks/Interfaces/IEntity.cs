@@ -7,7 +7,7 @@ namespace Tanks.Interfaces
 	/// Аналог объекта в javascript или ExpandoObject в шарпе
 	/// key - свойство конкретного объекта
 	/// </summary>
-	interface IEntity
+	public interface IEntity
 	{
 		object this[string key] { get; set; }
 		

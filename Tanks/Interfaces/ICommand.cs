@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Интерфейс, описывающий действие
 	/// </summary>
-	interface ICommand
+	public interface ICommand
 	{
 		bool Execute();
 	}

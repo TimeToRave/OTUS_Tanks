@@ -19,24 +19,30 @@ namespace Tanks.Classes.Objects
 		/// </summary>
 		public List<ICommand> Behavior { get; set; }
 
+		IGameMaster GameMaster { get; set; }
+
 		/// <summary>
 		/// Конструктор
 		/// </summary>
 		/// <param name="start">Начальные координаты</param>
 		/// <param name="initialVelocity">Скорость танка</param>
 		/// <param name="behaviors">Список шагов, определяющие поведение танка</param>
-		public Tank(Point start, Point initialVelocity, List<string> behaviors)
+		public Tank(Point start, Point initialVelocity, List<string> behaviors, IGameMaster gameMaster)
 		{
+			GameMaster = gameMaster;
+
 			properties = new Dictionary<string, object>();
 			Behavior = new List<ICommand>();
 
 			properties["Position"] = start;
 			properties["Velocity"] = initialVelocity;
 
-			Commands = new Dictionary<string, ICommand>();
-			Commands.Add("Move", new Move(new MovableAdapter(this)));
-			Commands.Add("RotateRight", new RotateRight(new RotableAdapter(this)));
-			Commands.Add("RotateLeft", new RotateLeft(new RotableAdapter(this)));
+			Commands = new Dictionary<string, ICommand>
+			{
+				{ "Move", new Move(new MovableAdapter(this), GameMaster) },
+				{ "RotateRight", new RotateRight(new RotableAdapter(this)) },
+				{ "RotateLeft", new RotateLeft(new RotableAdapter(this)) }
+			};
 
 			foreach (string behavior in behaviors)
 			{

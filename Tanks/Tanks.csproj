@@ -48,10 +48,12 @@
     <Compile Include="Classes\Commands\Move.cs" />
     <Compile Include="Classes\Commands\RotateLeft.cs" />
     <Compile Include="Classes\Commands\RotateRight.cs" />
+    <Compile Include="Classes\GameMaster.cs" />
     <Compile Include="Classes\Objects\Tank.cs" />
     <Compile Include="Classes\Point.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IGameMaster.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IRotable.cs" />
     <Compile Include="Program.cs" />

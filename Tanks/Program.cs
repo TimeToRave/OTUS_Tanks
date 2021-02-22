@@ -12,6 +12,16 @@ namespace Tanks
 		{
 			List<IEntity> gameObjects = new List<IEntity>();
 
+			GameMaster gameMaster = new GameMaster(
+				(
+				new Point(-10, -10),
+				new Point(10, 10)
+				),
+				gameObjects
+			);
+
+			
+
 			Tank tank = new Tank(
 				new Point(0, 0),
 				new Point(1, 0),
@@ -25,29 +35,15 @@ namespace Tanks
 					"Move",
 					"Move",
 					"RotateLeft"
-				}
+				},
+				gameMaster
 			);
 
 			gameObjects.Add(tank);
 
-			for (int i = 0; i < 100; i++)
-			{
-				Update(i, gameObjects);
-			}
+			gameMaster.Start(100);
 
 			Console.ReadKey();
-		}
-
-		public static void Update(int tick, List<IEntity> gameObjects)
-		{
-			foreach (IEntity gameObject in gameObjects)
-			{
-				int index = tick % gameObject.Behavior.Count;
-				gameObject.Behavior[index].Execute();
-				Console.WriteLine(gameObject.GetInfo());
-			}
-		}
+		}	
 	}
-
-
 }
