@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Adapters\MovableAdapter.cs" />
     <Compile Include="Classes\Commands\Move.cs" />
+    <Compile Include="Classes\Objects\Tank.cs" />
     <Compile Include="Classes\Point.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
