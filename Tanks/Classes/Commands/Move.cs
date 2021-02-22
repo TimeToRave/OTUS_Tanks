@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tanks.Interfaces;
-using Tanks.Classes;
+﻿using Tanks.Interfaces;
 
 namespace Tanks.Classes.Commands
 {

@@ -35,6 +35,8 @@ namespace Tanks.Classes.Objects
 
 			Commands = new Dictionary<string, ICommand>();
 			Commands.Add("Move", new Move(new MovableAdapter(this)));
+			Commands.Add("RotateRight", new RotateRight(new RotableAdapter(this)));
+			Commands.Add("RotateLeft", new RotateLeft(new RotableAdapter(this)));
 
 			foreach (string behavior in behaviors)
 			{
@@ -54,7 +56,7 @@ namespace Tanks.Classes.Objects
 
 		public string GetInfo()
 		{
-			string info = string.Format("Position: {0}", this["Position"].ToString());
+			string info = string.Format("Position: {0}, Velocity {1}", this["Position"].ToString(), this["Velocity"].ToString());
 			return info;
 		}
 	}

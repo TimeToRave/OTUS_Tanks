@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\MovableAdapter.cs" />
+    <Compile Include="Adapters\RotableAdapter.cs" />
     <Compile Include="Classes\Commands\Move.cs" />
+    <Compile Include="Classes\Commands\RotateLeft.cs" />
+    <Compile Include="Classes\Commands\RotateRight.cs" />
     <Compile Include="Classes\Objects\Tank.cs" />
     <Compile Include="Classes\Point.cs" />
     <Compile Include="Interfaces\ICommand.cs" />

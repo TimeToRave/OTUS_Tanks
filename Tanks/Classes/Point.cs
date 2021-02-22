@@ -34,5 +34,10 @@ namespace Tanks.Classes
 		{
 			return String.Format("( {0} ; {1} )", X, Y);
 		}
+
+		public void Swap ()
+		{
+			(X, Y) = (Y, X);
+		}
 	}
 }

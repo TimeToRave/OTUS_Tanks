@@ -14,12 +14,17 @@ namespace Tanks
 
 			Tank tank = new Tank(
 				new Point(0, 0),
-				new Point(1, 1),
+				new Point(1, 0),
 				new List<string>
 				{
 					"Move",
 					"Move",
-					"Move"
+					"Move",
+					"RotateRight",
+					"Move",
+					"Move",
+					"Move",
+					"RotateLeft"
 				}
 			);
 

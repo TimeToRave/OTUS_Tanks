@@ -1,4 +1,6 @@
-﻿namespace Tanks.Interfaces
+﻿using Tanks.Classes;
+
+namespace Tanks.Interfaces
 {
 	/// <summary>
 	/// Интерфейс, описывающий объект, который может поворачиваться
@@ -6,13 +8,13 @@
 	interface IRotable
 	{
 		/// <summary>
-		/// Текущее направление
+		/// Текущее приращение скорости
 		/// </summary>
-		int Direction { get; set; }
+		Point Velocity { get; set; }
 
 		/// <summary>
 		/// Моментальная угловая скорость
 		/// </summary>
-		int AngularVelocity { get; set; }
+		//int AngularVelocity { get; set; }
 	}
 }
