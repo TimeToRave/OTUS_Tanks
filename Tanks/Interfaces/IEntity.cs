@@ -9,6 +9,11 @@ namespace Tanks.Interfaces
 	/// </summary>
 	public interface IEntity
 	{
+		/// <summary>
+		/// Свойства объекта
+		/// </summary>
+		/// <param name="key"></param>
+		/// <returns></returns>
 		object this[string key] { get; set; }
 		
 		/// <summary>

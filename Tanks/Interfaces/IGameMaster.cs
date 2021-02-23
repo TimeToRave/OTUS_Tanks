@@ -4,6 +4,7 @@ namespace Tanks.Interfaces
 {
 	interface IGameMaster
 	{
-		(Point LeftBottom, Point RightTop) FieldSize { get; set; }
+		bool CheckIsInField(Point position);
+		void DestroyGameObject(IEntity entity);
 	}
 }

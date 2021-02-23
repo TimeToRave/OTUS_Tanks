@@ -14,11 +14,14 @@ namespace Tanks.Classes.Objects
 
 		/// <summary>
 		/// Сценарий поведения объекта, представляет из себя
-		/// список дейсвтвий, которые выполняются друг за другом каждый
+		/// список действий, которые выполняются друг за другом каждый
 		/// момент игрового времени
 		/// </summary>
 		public List<ICommand> Behavior { get; set; }
 
+		/// <summary>
+		/// Объект, содержащий ограничения
+		/// </summary>
 		IGameMaster GameMaster { get; set; }
 
 		/// <summary>
@@ -27,13 +30,14 @@ namespace Tanks.Classes.Objects
 		/// <param name="start">Начальные координаты</param>
 		/// <param name="initialVelocity">Скорость танка</param>
 		/// <param name="behaviors">Список шагов, определяющие поведение танка</param>
-		public Tank(Point start, Point initialVelocity, List<string> behaviors, IGameMaster gameMaster)
+		public Tank(string name, Point start, Point initialVelocity, List<string> behaviors, IGameMaster gameMaster)
 		{
 			GameMaster = gameMaster;
 
 			properties = new Dictionary<string, object>();
 			Behavior = new List<ICommand>();
 
+			properties["Name"] = name;
 			properties["Position"] = start;
 			properties["Velocity"] = initialVelocity;
 
@@ -60,9 +64,14 @@ namespace Tanks.Classes.Objects
 			set { properties[key] = value; }
 		}
 
+		
+		/// <summary>
+		/// Возвращает информацию об объекте
+		/// </summary>
+		/// <returns></returns>
 		public string GetInfo()
 		{
-			string info = string.Format("Position: {0}, Velocity {1}", this["Position"].ToString(), this["Velocity"].ToString());
+			string info = string.Format("[{0}] Position: {1}, Velocity {2}", this["Name"], this["Position"].ToString(), this["Velocity"].ToString());
 			return info;
 		}
 	}

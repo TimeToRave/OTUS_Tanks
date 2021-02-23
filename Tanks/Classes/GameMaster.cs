@@ -9,7 +9,7 @@ namespace Tanks.Classes
 		/// <summary>
 		/// Ограничивает размер игрового поля
 		/// </summary>
-		public (Point, Point) FieldSize { get; set; }
+		public (Point LeftBottom, Point RightTop) FieldSize { get; set; }
 
 		/// <summary>
 		/// Коллекция всех игровых объектов
@@ -52,6 +52,23 @@ namespace Tanks.Classes
 				gameObject.Behavior[index].Execute();
 				Console.WriteLine(gameObject.GetInfo());
 			}
+		}
+
+		/// <summary>
+		/// Выполняет проверку точки в игровом поле
+		/// </summary>
+		/// <param name="position">Координаты, проверяемого положения</param>
+		/// <returns>Вхождение в поле</returns>
+		public bool CheckIsInField (Point position) 
+		{
+			bool isInField = (
+				(FieldSize.LeftBottom.X <= position.X) &&
+				(FieldSize.RightTop.X >= position.X) &&
+				(FieldSize.LeftBottom.Y <= position.Y) &&
+				(FieldSize.RightTop.Y >= position.Y)
+			);
+
+			return isInField;
 		}
 	}
 }
