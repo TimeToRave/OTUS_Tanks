@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Tanks.Interfaces;
 
 namespace Tanks.Classes
@@ -69,6 +70,18 @@ namespace Tanks.Classes
 			);
 
 			return isInField;
+		}
+
+		/// <summary>
+		/// Исключает сущность из списка игровых объектов
+		/// </summary>
+		/// <param name="entity"></param>
+		public void DestroyGameObject (IDestroyable entity)
+		{
+			Console.WriteLine(string.Format("Destroying {0} object", entity.Name));
+			GameObjects = GameObjects.Where(go => go["Name"].ToString() != entity.Name).ToList();
+			entity = null;
+			
 		}
 	}
 }

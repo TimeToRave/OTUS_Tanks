@@ -43,7 +43,7 @@ namespace Tanks.Classes.Objects
 
 			Commands = new Dictionary<string, ICommand>
 			{
-				{ "Move", new Move(new MovableAdapter(this), GameMaster) },
+				{ "Move", new Move(GameMaster, new MovableAdapter(this)) },
 				{ "RotateRight", new RotateRight(new RotableAdapter(this)) },
 				{ "RotateLeft", new RotateLeft(new RotableAdapter(this)) }
 			};

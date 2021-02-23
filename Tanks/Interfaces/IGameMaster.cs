@@ -5,6 +5,6 @@ namespace Tanks.Interfaces
 	interface IGameMaster
 	{
 		bool CheckIsInField(Point position);
-		void DestroyGameObject(IEntity entity);
+		void DestroyGameObject(IDestroyable entity);
 	}
 }

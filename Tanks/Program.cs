@@ -23,6 +23,7 @@ namespace Tanks
 			
 
 			Tank tank = new Tank(
+				"Player 1",
 				new Point(0, 0),
 				new Point(1, 0),
 				new List<string>

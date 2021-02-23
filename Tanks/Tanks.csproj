@@ -43,15 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\DestroyableAdapter.cs" />
     <Compile Include="Adapters\MovableAdapter.cs" />
     <Compile Include="Adapters\RotableAdapter.cs" />
+    <Compile Include="Classes\Commands\Destroy.cs" />
+    <Compile Include="Classes\Commands\DestroyableMove.cs" />
+    <Compile Include="Classes\Commands\Idle.cs" />
     <Compile Include="Classes\Commands\Move.cs" />
     <Compile Include="Classes\Commands\RotateLeft.cs" />
     <Compile Include="Classes\Commands\RotateRight.cs" />
     <Compile Include="Classes\GameMaster.cs" />
+    <Compile Include="Classes\Objects\Bullet.cs" />
     <Compile Include="Classes\Objects\Tank.cs" />
     <Compile Include="Classes\Point.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IDestroyable.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IGameMaster.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
