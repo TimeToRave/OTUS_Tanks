@@ -1,6 +1,4 @@
-﻿using Tanks.Classes;
-
-namespace Tanks.Interfaces
+﻿namespace Tanks.Interfaces
 {
 	/// <summary>
 	/// Интерфейс, описывающий объект, который может быть уничтожен

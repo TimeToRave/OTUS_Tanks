@@ -2,7 +2,7 @@
 
 namespace Tanks.Classes.Commands
 {
-	class Destroy : ICommand
+	public class Destroy : ICommand
 	{
 		IDestroyable DestroyableEntity { get; set; }
 		IGameMaster GameMaster { get; set; }
