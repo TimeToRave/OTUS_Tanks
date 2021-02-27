@@ -2,7 +2,7 @@
 
 namespace Tanks.Adapters
 {
-	class DestroyableAdapter : IDestroyable
+	public class DestroyableAdapter : IDestroyable
 	{
 		IEntity Entity { get; set; }
 

@@ -11,10 +11,5 @@ namespace Tanks.Interfaces
 		/// Текущее приращение скорости
 		/// </summary>
 		Point Velocity { get; set; }
-
-		/// <summary>
-		/// Моментальная угловая скорость
-		/// </summary>
-		//int AngularVelocity { get; set; }
 	}
 }
