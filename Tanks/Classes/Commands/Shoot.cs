@@ -4,13 +4,13 @@ using Tanks.Interfaces;
 
 namespace Tanks.Classes.Commands
 {
-	class Shoot : ICommand
+	public class Shoot : ICommand
 	{
-		IShootable ShootableEntity { get; set; }
+		public IShootable ShootableEntity { get; set; }
 
-		IEntity Shoter { get; set; }
+		public IEntity Shoter { get; set; }
 
-		IGameMaster GameMaster { get; set; }
+		public IGameMaster GameMaster { get; set; }
 
 		public Shoot(IGameMaster gameMaster, IShootable shootableEntity, IEntity shoter)
 		{

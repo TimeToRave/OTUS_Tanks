@@ -2,7 +2,7 @@
 
 namespace Tanks.Interfaces
 {
-	interface IShootable
+	public interface IShootable
 	{
 		/// <summary>
 		/// Объект, который создается при выстреле

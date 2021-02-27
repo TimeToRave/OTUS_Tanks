@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Tanks.Classes;
 using Tanks.Interfaces;
 
 namespace TanksTest.TestClasses
@@ -22,10 +23,20 @@ namespace TanksTest.TestClasses
 			properties["Name"] = "Test entity " + Guid.NewGuid().ToString();
 		}
 
+		public TestEntity(string name, Point start, Point initialVelocity, List<string> behaviors, IGameMaster gameMaster)
+		{
+			properties = new Dictionary<string, object>();
+			Behavior = new List<ICommand>();
+
+			properties["Name"] = name;
+			properties["Position"] = start;
+			properties["Velocity"] = initialVelocity;
+		}
+
 		/// <summary>
 		/// Свойства объекта
 		/// </summary>
-		private Dictionary<string, object> properties { get; set; }
+		public Dictionary<string, object> properties { get; set; }
 		public object this[string key]
 		{
 			get { return properties[key]; }
@@ -40,6 +51,18 @@ namespace TanksTest.TestClasses
 		public string GetInfo()
 		{
 			return "Test entity info";
+		}
+	}
+
+	public class TestIShootable : IShootable
+	{
+		public IEntity Weapon { get; set; }
+
+		public TestIShootable ()
+		{
+			var entity = new TestEntity();
+			entity.properties.Add("Weapon", new TestEntity());
+			Weapon = entity;
 		}
 	}
 }
