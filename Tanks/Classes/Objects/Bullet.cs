@@ -56,6 +56,17 @@ namespace Tanks.Classes.Objects
 			}
 		}
 
+		public Bullet(IGameMaster gameMaster) : this(
+			"Bullet",
+			new Point(0, 0),
+			new Point(0, 1),
+			new List<string>
+			{
+				"DestoyableMove"
+			},
+			gameMaster			
+			){}
+
 		/// <summary>
 		/// Свойства объекта
 		/// </summary>

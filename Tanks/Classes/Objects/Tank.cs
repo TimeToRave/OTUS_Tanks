@@ -40,12 +40,14 @@ namespace Tanks.Classes.Objects
 			properties["Name"] = name;
 			properties["Position"] = start;
 			properties["Velocity"] = initialVelocity;
+			properties["Weapon"] = new Bullet(GameMaster);
 
 			Commands = new Dictionary<string, ICommand>
 			{
 				{ "Move", new Move(GameMaster, new MovableAdapter(this)) },
 				{ "RotateRight", new RotateRight(new RotableAdapter(this)) },
-				{ "RotateLeft", new RotateLeft(new RotableAdapter(this)) }
+				{ "RotateLeft", new RotateLeft(new RotableAdapter(this)) },
+				{ "Shoot", new Shoot(GameMaster, new ShootableAdapter(this), (IEntity) this) }
 			};
 
 			foreach (string behavior in behaviors)

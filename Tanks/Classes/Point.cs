@@ -29,6 +29,14 @@ namespace Tanks.Classes
 			sum.Y = point1.Y + point2.Y;
 			return sum;
 		}
+		public static Point operator *(Point point1, int multiplier)
+		{
+			Point result = new Point();
+			result.X = point1.X * multiplier;
+			result.Y = point1.Y * multiplier;
+			return result;
+		}
+
 
 		public override string ToString()
 		{
