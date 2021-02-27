@@ -65,5 +65,35 @@ namespace TanksTest
 				((Point)((TestEntity)bullet).properties["Velocity"]).Y == 2
 			);
 		}
+
+		/// <summary>
+		/// Проверяет корректность установки начального положения снаряда
+		/// </summary>
+		[TestMethod]
+		public void Shoot_Bullet_InitialPosition()
+		{
+			var gameMaster = new GameMaster(
+				(
+				new Point(0, 0),
+				new Point(10, 10)
+				),
+				new List<IEntity>()
+			);
+
+			var shoterEntity = new TestEntity();
+
+			shoterEntity["Position"] = new Point(3, 2);
+			shoterEntity["Velocity"] = new Point(0, 1);
+
+			var shoot = new Shoot(gameMaster, new TestIShootable(), shoterEntity);
+			shoot.Execute();
+
+			var bullet = gameMaster.GameObjects.Last();
+
+			Assert.IsTrue(
+				((Point)((TestEntity)bullet).properties["Position"]).X == 3 &&
+				((Point)((TestEntity)bullet).properties["Position"]).Y == 2
+			);
+		}
 	}
 }
