@@ -6,5 +6,6 @@ namespace Tanks.Interfaces
 	{
 		bool CheckIsInField(Point position);
 		void DestroyGameObject(IDestroyable entity);
+		void AddGameObject(IEntity gameObject);
 	}
 }

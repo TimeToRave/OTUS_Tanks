@@ -47,11 +47,11 @@ namespace Tanks.Classes
 		/// <param name="gameObjects"></param>
 		public static void Update(int tick, List<IEntity> gameObjects)
 		{
-			foreach (IEntity gameObject in gameObjects)
+			for(int i = 0; i < gameObjects.Count; i++)
 			{
-				int index = tick % gameObject.Behavior.Count;
-				gameObject.Behavior[index].Execute();
-				Console.WriteLine(gameObject.GetInfo());
+				int index = tick % gameObjects[i].Behavior.Count;
+				gameObjects[i].Behavior[index].Execute();
+				Console.WriteLine(gameObjects[i].GetInfo());
 			}
 		}
 
@@ -80,8 +80,12 @@ namespace Tanks.Classes
 		{
 			Console.WriteLine(string.Format("Destroying {0} object", entity.Name));
 			GameObjects = GameObjects.Where(go => go["Name"].ToString() != entity.Name).ToList();
-			entity = null;
-			
+			entity = null;	
+		}
+
+		public void AddGameObject(IEntity gameObject) 
+		{
+			GameObjects.Add(gameObject);
 		}
 	}
 }
