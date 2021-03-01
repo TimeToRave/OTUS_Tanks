@@ -54,5 +54,47 @@ namespace TanksTest
 				p1.Y == 1
 			);
 		}
+
+		/// <summary>
+		/// Тест, проверяющий метод сравнения двух координат
+		/// Сравнивает две одинаковых координаты
+		/// </summary>
+		[TestMethod]
+		public void Point_Equals_TwoEqualPoints()
+		{
+			Point p1 = new Point(1, 2);
+
+			Assert.IsTrue(
+				p1.Equals(new Point(1, 2))
+			);
+		}
+
+		/// <summary>
+		/// Тест, проверяющий метод сравнения двух координат
+		/// Сравнивает две разных координаты
+		/// </summary>
+		[TestMethod]
+		public void Point_Equals_TwoNonEqualPoints()
+		{
+			Point p1 = new Point(1, 2);
+
+			Assert.IsFalse(
+				p1.Equals(new Point(2, 2))
+			);
+		}
+
+		/// <summary>
+		/// Тест, проверяющий метод сравнения двух координат
+		/// Сравнивает координату и объект
+		/// </summary>
+		[TestMethod]
+		public void Point_Equals_PointAndNotPointObject()
+		{
+			Point p1 = new Point(1, 2);
+
+			Assert.IsFalse(
+				p1.Equals("Hello")
+			);
+		}
 	}
 }
