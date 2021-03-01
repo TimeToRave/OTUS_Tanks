@@ -5,7 +5,7 @@ namespace Tanks.Interfaces
 	/// <summary>
 	/// Интерфейс, описывающий объект, который может двигаться
 	/// </summary>
-	interface IMovable
+	public interface IMovable
 	{
 		/// <summary>
 		/// Текущая позиция

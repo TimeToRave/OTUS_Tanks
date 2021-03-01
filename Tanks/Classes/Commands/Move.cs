@@ -2,7 +2,7 @@
 
 namespace Tanks.Classes.Commands
 {
-	class Move : ICommand 
+	public class Move : ICommand 
 	{
 		IMovable MovableEntity { get; set; }
 		IGameMaster GameMaster { get; set; }
