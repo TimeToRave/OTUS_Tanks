@@ -2,7 +2,7 @@
 
 namespace Tanks.Classes.Commands
 {
-	class RotateRight : ICommand
+	public class RotateRight : ICommand
 	{
 		IRotable RotableEntity { get; set; }
 

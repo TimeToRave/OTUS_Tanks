@@ -39,7 +39,30 @@ namespace Tanks
 				gameMaster
 			);
 
+			Tank tank2 = new Tank(
+				"Tank 2",
+				new Point(10, 10),
+				new Point(0, -1),
+				new List<string>
+				{
+					"Move",
+					"Move",
+					"Move",
+					"Move",
+					"Move",
+					"Move",
+					"Move",
+					"Move",
+					"Move",
+					"RotateLeft",
+					"Shoot",
+					"RotateLeft"					
+				},
+				gameMaster
+			);
+
 			gameObjects.Add(tank);
+			gameObjects.Add(tank2);
 
 			gameMaster.Start(100);
 

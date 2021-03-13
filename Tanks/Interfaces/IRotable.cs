@@ -5,7 +5,7 @@ namespace Tanks.Interfaces
 	/// <summary>
 	/// Интерфейс, описывающий объект, который может поворачиваться
 	/// </summary>
-	interface IRotable
+	public interface IRotable
 	{
 		/// <summary>
 		/// Текущее приращение скорости

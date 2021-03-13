@@ -57,9 +57,11 @@
     <Compile Include="ShootTest.cs" />
     <Compile Include="TestClasses\TestIDestroyable.cs" />
     <Compile Include="TestClasses\TestIMovable.cs" />
+    <Compile Include="TestClasses\TestIRotable.cs" />
     <Compile Include="TestClasses\TestIShootable.cs" />
     <Compile Include="DestroyTest.cs" />
     <Compile Include="MoveTest.cs" />
+    <Compile Include="RotateTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
